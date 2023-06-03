@@ -1,0 +1,326 @@
+
+Object - oriented
+1) What is Object oriented? Write down difference b/w Object oriented and procedure oriented programming approach.
+Procedural Programming
+Procedural Programming can be defined as a programming model which is derived from structured programming, based upon the concept of calling procedure. Procedures, also known as routines, subroutines or functions, simply consist of a series of computational steps to be carried out. During a program’s execution, any given procedure might be called at any point, including by other procedures or itself. 
+Object-Oriented Programming
+Object-oriented programming can be defined as a programming model which is based upon the concept of objects. Objects contain data in the form of attributes and code in the form of methods. In object-oriented programming, computer programs are designed using the concept of objects that interact with the real world. Object-oriented programming languages are various but the most popular ones are class-based, meaning that objects are instances of classes, which also determine their types. 
+
+
+2)What is class and object? Explain all oop features in java with example.
+
+A class is a user-defined blueprint or prototype from which objects are created. It represents the set of properties or methods that are common to all objects of one type. Using classes, you can create multiple objects with the same behavior instead of writing their code multiple times. This includes classes for objects occurring more than once in your code. In general, class declarations can include these components in order: 
+    1. Modifiers: A class can be public or have default access (Refer to this for details).
+    2. Class name: The class name should begin with the initial letter capitalized by convention.
+    3. Superclass (if any): The name of the class’s parent (superclass), if any, preceded by the keyword extends. A class can only extend (subclass) one parent.
+    4. Interfaces (if any): A comma-separated list of interfaces implemented by the class, if any, preceded by the keyword implements. A class can implement more than one interface.
+    5. Body: The class body is surrounded by braces, { }.
+An object is a basic unit of Object-Oriented Programming that represents real-life entities. A typical Java program creates many objects, which as you know, interact by invoking methods. The objects are what perform your code, they are the part of your code visible to the viewer/user. An object mainly consists of: 
+    1. State: It is represented by the attributes of an object. It also reflects the properties of an object.
+    2. Behavior: It is represented by the methods of an object. It also reflects the response of an object to other objects.
+    3. Identity: It is a unique name given to an object that enables it to interact with other objects.
+    4. Method: A method is a collection of statements that perform some specific task and return the result to the caller. A method can perform some specific task without returning anything. Methods allow us to reuse the code without retyping it, which is why they are considered time savers. In Java, every method must be part of some class, which is different from languages like C, C++, and Python.
+
+
+3)What are the role of setter and getter method ? What is POJO In Java.
+
+    Getters and setters are used to protect your data, particularly when        creating classes. 
+    For each instance variable, a getter method returns its value while a setter method sets or updates its value. Given this, getters and setters are also known as accessors and mutators, respectively.
+By convention, getters start with the word "get" and setters with the word "set", followed by a variable name. In both cases the first letter of the variable's name is capitalized:
+ The getter method returns the value of the attribute. The setter method takes a parameter and assigns it to the attribute.
+Once the getter and setter have been defined, we use it in our main:
+eg 1.
+public class Vehicle {
+  private String color;
+  
+  // Getter
+  public String getColor() {
+    return color;
+  }
+  
+  // Setter
+  public void setColor(String c) {
+    this.color = c;
+  }
+}
+eg 2.
+import java.util.Scanner;
+class upre{
+  private int a,b;
+  public upre(int a, int b){
+    this.a = a;
+    this.b = b;
+  }
+  public upre(){}
+
+  public void setA(int a){
+    this.a = a;
+  }
+  public void setB(int b){
+    this.b = b;
+  }
+  public int getA(){
+    return a;
+  }
+  public int getB(){
+    return b;
+  }
+ 
+}
+class Main{
+  public static void main(String args[]){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter 2 number");
+    int x = sc.nextInt();
+    int y = sc.nextInt();
+
+   upre obj = new upre(x,y);// obj--> a=0,b=0
+System.out.println("Before update and retrive ");
+    System.out.println("a prop: "+obj.getA()+" b props :"+obj.getB());
+System.out.println("Try to update and retrive  the value of a particular property of an object from anothor class");
+System.out.println("Enter 2 number");
+    int a1 = sc.nextInt();
+    int b1 = sc.nextInt();
+ obj.setA(a1);
+ obj.setB(b1);
+System.out.println("After update and retrive ");
+   System.out.println("a prop: "+obj.getA()+" b prop :"+obj.getB());
+
+  }
+}
+
+
+4)How to update and retrive the value of a particular property of an object from anothor class(Let suppose the property is private) ?
+import java.util.Scanner;
+class upre{
+  private int a,b;
+  public upre(int a, int b){
+    this.a = a;
+    this.b = b;
+  }
+  public upre(){}
+
+  public void setA(int a){
+    this.a = a;
+  }
+  public void setB(int b){
+    this.b = b;
+  }
+  public int getA(){
+    return a;
+  }
+  public int getB(){
+    return b;
+  }
+ 
+}
+class Main{
+  public static void main(String args[]){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter 2 number");
+    int x = sc.nextInt();
+    int y = sc.nextInt();
+
+   upre obj = new upre(x,y);// obj--> a=0,b=0
+System.out.println("Before update and retrive ");
+    System.out.println("a prop: "+obj.getA()+" b props :"+obj.getB());
+System.out.println("Try to update and retrive  the value of a particular property of an object from anothor class");
+System.out.println("Enter 2 number");
+    int a1 = sc.nextInt();
+    int b1 = sc.nextInt();
+ obj.setA(a1);
+ obj.setB(b1);
+System.out.println("After update and retrive ");
+   System.out.println("a prop: "+obj.getA()+" b prop :"+obj.getB());
+
+  }
+}
+
+5) Create an Object having two properties and four behaviours
+(add,substract,multiply,divide) to perform desired operation.object must have setter and getter and keep all properties private.
+import java.util.Scanner;
+class Asmd{
+  private int a,b;
+  public Asmd(int a, int b){
+    this.a = a;
+    this.b = b;
+  }
+  public Asmd(){}
+
+  public void setA(int a){
+    this.a = a;
+  }
+  public void setB(int b){
+    this.b = b;
+  }
+  public int getA(){
+    return a;
+  }
+  public int getB(){
+    return b;
+  }
+  public void add()
+{
+    System.out.println("add :"+(a+b));
+}
+public void mul()
+{
+    System.out.println("mul :"+(a*b));
+}
+public void sub()
+{
+    System.out.println("sub :"+(a-b));
+}
+public void div()
+{
+    System.out.println("Div :"+(a/b));
+
+}
+}
+class Main{
+  public static void main(String args[]){
+    Scanner sc = new Scanner(System.in);
+
+    System.out.println("Enter 2 number for calulation");
+    int x = sc.nextInt();
+    int y = sc.nextInt();
+
+  Asmd obj = new Asmd(x,y);// obj--> a=0,b=0
+System.out.println("Before update and retrive data is :-> ");
+    System.out.println("a prop: "+obj.getA()+" b props :"+obj.getB());
+obj.add();
+obj.mul();
+obj.sub();
+obj.div();
+System.out.println("Try to update and retrive  the value for add,substract,multiply,divide ");
+System.out.println("Enter 2 number");
+    int a1 = sc.nextInt();
+    int b1 = sc.nextInt();
+ obj.setA(a1);
+ obj.setB(b1);
+System.out.println("After update and retrive ");
+   System.out.println("a prop: "+obj.getA()+" b prop :"+obj.getB());
+obj.add();
+obj.mul();
+obj.sub();
+obj.div();
+
+
+  }
+}
+
+6)What is Constructor? List down the keypoints about constructor.
+SS in phone
+
+7)Can we make multiple contructor inside a class? if yes then what is the need of it.Explain,
+
+Yes, a Class in ABL can have more than Constructor. Multiple instance constructors can be defined for a class that are overloaded with different parameter signatures. If an instance constructor is defined without parameters, that constructor becomes the default instance constructor for the class.
+
+8) Private constuctor is legal or illegal ?
+   Legal
+(By default, constructors are defined in public section of class.)
+
+9) What is Singleton class explain with suitable example?
+
+10)What is method overloading ? What are importance of method overloading ? Can we overload the main method in java ?
+(defination and importance sir notes)
+Yes, We can overload the main method in java but JVM only calls the original main method, it will never call our overloaded main method.
+
+11) How to pass as many argument to java method?
+
+
+Parameters and Arguments
+Parameters are specified after the method name, inside the parentheses. You can add as many parameters as you want, just separate them with a comma.
+eg.1
+ Employee obj1 = new Employee(x,y,z);
+eg 2
+go on google
+
+12) Can we overload the method with var-arg type of argument.
+Vararg Methods can also be overloaded, but overloading may lead to ambiguity.
+
+[
+public class Demo {
+   public static void Varargs(int... args) {
+      System.out.println("
+Number of int arguments are: " + args.length);
+      System.out.println("The int argument values are: ");
+      for (int i : args)
+      System.out.println(i);
+   }
+   public static void Varargs(char... args) {
+      System.out.println("
+Number of char arguments are: " + args.length);
+      System.out.println("The char argument values are: ");
+      for (char i : args)
+      System.out.println(i);
+   }
+   public static void Varargs(double... args) {
+      System.out.println("
+Number of double arguments are: " + args.length);
+      System.out.println("The double argument values are: ");
+      for (double i : args)
+      System.out.println(i);
+   }
+   public static void main(String args[]) {
+      Varargs(4, 9, 1, 6, 3);
+      Varargs('A', 'B', 'C');
+      Varargs(5.9, 2.5);
+   }
+}
+Output
+Number of int arguments are: 5
+The int argument values are:
+4
+9
+1
+6
+3
+Number of char arguments are: 3
+The char argument values are:
+A
+B
+C
+Number of double arguments are: 2
+The double argument values are:
+5.9
+2.5
+]
+13) Create a class to calculate Area of circle with one data member to store the radius and another to store area value. Create method members
+init - to input radius from user
+calc - to calculate area
+display- to display area
+
+14) Create a class MathOperation with two data member X and Y to store the operand and third data member R to store result of operation.Create method members
+init - to input X and Y from user
+add - to add X and Y and store in R
+multiply - to multiply X and Y and store in R
+power - to calculate X Y and store in R
+display- to display Result R
+
+15) Create a class MathOperation containing method ‘multiply’ to calculate multiplication of following arguments.
+two integers
+three float
+all elements of array
+one double and one integer
+
+16) Create a class Person with properties (name and age) with following features.
+Default age of person should be 18.
+A person object can be initialized with name and age.
+Method to display name and age of person.
+
+17) Create a class Employee with(empNo ,salary and totalSalary) with following features.
+Only parameterized constructor;
+totalSalary always represent total of all the salaries of all employees created.
+empNo should be auto incremented.
+display total employees and totalSalary using class method.
+
+18) Create class Product (pid, price, quantity) with parameterized constructor.Create a main function in different class (say XYZ) and perform following task:
+Accept five product information from user and store in an array
+Find Pid of product with highest price.
+Create method (with array of product’s object as argument) in XYZ class to calculate and return total amount spent on all products. (amount spent on single product=price of product * quantity of product).
+
+19) Make list of Students having name, roll no., age, score. Write a program to accept 10 students record and arrange the Students based on the score group [0-50], [50-65],[65-80],[80-100].
+
+20)Create class Tile to store the edge length of a square tile , and create another class Floor to store length and width of a rectangular floor. Add method totalTiles(Tile t) in Floor class with Tile as argument to calculate the whole number of tiles needed to cover the floor completely.
+
