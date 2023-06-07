@@ -21,11 +21,13 @@ class Main {
       System.out.println("Enter " + (i + 1) + " Element");
       arr[i] = sc.nextInt();
     }
-    System.out.println("given data is:");
-    System.out.println("given data is:");
+    System.out.println("given data iy:");
+    System.out.println("asdfghjk:");
+    System.out.println("asdfghjk:");
+    System.out.println("asdfghjk:");
 
     {
-      for (i = 0; i < n; i++)
+      for (i = 1; i <= n; i++)
         // System.out.println(+arr[i]+"is"+i);
         while (i < n) {
           int t = arr[i], rem = 0, rev = 1;
