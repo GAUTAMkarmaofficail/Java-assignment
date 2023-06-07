@@ -16,7 +16,9 @@ class Main {
     for (i = 0; i < n; i++) {
       System.out.println("Enter " + (i + 1) + " Element");
       arr[i] = sc.nextInt();
+     
     }
+    System.out.println("given data is:");
     System.out.println("given data is:");
 
     {
