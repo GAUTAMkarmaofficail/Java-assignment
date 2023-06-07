@@ -22,6 +22,7 @@ class Main {
       arr[i] = sc.nextInt();
     }
     System.out.println("given data is:");
+    System.out.println("given data is:");
 
     {
       for (i = 0; i < n; i++)
